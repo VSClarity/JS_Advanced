@@ -7,9 +7,9 @@ const users = [
 ];
 
 function usersTask(usersList, minAge) {
-  return usersList.filter(
-    (u) => "name" in u && "age" in u && "isMale" in u && u.age > minAge,
-  );
+  return usersList
+    .filter((u) => "name" in u && "age" in u && "isMale" in u && u.age > minAge)
+    .sort((a, b) => a.age - b.age);
 }
 
-console.log(usersTask(users, 22));
+console.log(usersTask(users, 26));
